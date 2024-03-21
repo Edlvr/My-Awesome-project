@@ -92,17 +92,17 @@ func lineDigitization(operandStr string) (operandInt int, validRomeSmb bool, rom
 	if err != nil {
 		validOperand = false
 		operandStr = strings.ToUpper(operandStr)
-		validVariants := [maxRomanNumVal]string{"0", "I", "II", "III", "IV", "V", "VI",
-			"VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII",
-			"XIX", "XX", "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII",
-			"XXIX", "XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII",
-			"XXXVIII", "XXXIX", "XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII",
-			"XLVIII", "XLIX", "L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII",
-			"LIX", "LX", "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII",
-			"LXIX", "LXX", "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII",
-			"LXXVIII", "LXXIX", "LXXX", "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI",
-			"LXXXVII", "LXXXVIII", "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI",
-			"XCVII", "XCVIII", "XCIX", "C"}
+		validVariants := [maxRomanNumVal]string{
+			"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX",
+			"X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX",
+			"XX", "XXI", "XXII", "XXIII", "XXIV", "XXV", "XXVI", "XXVII", "XXVIII", "XXIX",
+			"XXX", "XXXI", "XXXII", "XXXIII", "XXXIV", "XXXV", "XXXVI", "XXXVII", "XXXVIII", "XXXIX",
+			"XL", "XLI", "XLII", "XLIII", "XLIV", "XLV", "XLVI", "XLVII", "XLVIII", "XLIX",
+			"L", "LI", "LII", "LIII", "LIV", "LV", "LVI", "LVII", "LVIII", "LIX",
+			"LX", "LXI", "LXII", "LXIII", "LXIV", "LXV", "LXVI", "LXVII", "LXVIII", "LXIX",
+			"LXX", "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII", "LXXVIII", "LXXIX",
+			"LXXX", "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI", "LXXXVII", "LXXXVIII", "LXXXIX",
+			"XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"}
 
 		for index, simbol := range validVariants {
 			if operandStr == simbol {
@@ -128,7 +128,7 @@ func lineDigitization(operandStr string) (operandInt int, validRomeSmb bool, rom
 }
 
 func intToRome(inpunint int) (output string) {
-	const maxRomanNumVal int = 100
+	const maxRomanNumVal int = 101
 	if inpunint < 0 || inpunint > maxRomanNumVal {
 		return
 	}
@@ -142,7 +142,7 @@ func intToRome(inpunint int) (output string) {
 		"LXIX", "LXX", "LXXI", "LXXII", "LXXIII", "LXXIV", "LXXV", "LXXVI", "LXXVII",
 		"LXXVIII", "LXXIX", "LXXX", "LXXXI", "LXXXII", "LXXXIII", "LXXXIV", "LXXXV", "LXXXVI",
 		"LXXXVII", "LXXXVIII", "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI",
-		"XCVII", "XCVIII", "XCIX"}
+		"XCVII", "XCVIII", "XCIX", "C"}
 	output = validVariants[inpunint]
 	return
 }
@@ -166,3 +166,4 @@ func operandConditions(operand1 int, operand2 int, isRomeNum1 bool, isRomeNum2 b
 		return
 	}
 }
+
